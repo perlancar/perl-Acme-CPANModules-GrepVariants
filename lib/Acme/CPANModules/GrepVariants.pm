@@ -65,9 +65,12 @@ basically a shortcut for something like this:
 you to do things like: search only in Perl code comments or inside string
 literals.
 
-**Searching other than files: **
+**Searching URLs**
 
-TODO
+<pm:App::grep::url> greps URLs from lines of input. You don't have to manually
+specify regex that matches URLs yourself; you can just add additional criteria
+for the URLs, e.g. whether the host part must contain some text, or whether a
+certain query parameter must match some pattern.
 
 _
 
