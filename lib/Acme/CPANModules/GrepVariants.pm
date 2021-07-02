@@ -9,20 +9,29 @@ use strict;
 use Acme::CPANModulesUtil::Misc;
 
 my $description = <<'_';
-**Improvements**
+**1. Reimplementations**
 
-Created in 2005 by Andy Lester, <pm:ack> is the granddaddy of grep-like programs
-that try to improve the experience of using grep to search for text in source
-code. ack skips VCS directories like `.git` or `.svn`, and understands file
-types so it doesn't look into giant `.mp4`s and other binaries by default. ack
-has spurred the development of other ack improvements (mostly in speed aspect)
-like The Silver Searcher (`ag`) or `ripgrep`. `git` also now includes a
+grep for <pm:PerlPowerTools> simply tries to reimplement grep in Perl, as part
+of the project to reimplement many Unix utilities in Perl. It has few practical
+uses.
+
+
+**2a. Improvements in recursive searching against files**
+
+**ack**. Created in 2005 by Andy Lester, <pm:ack> is the granddaddy of grep-like
+programs that try to improve the experience of using grep to search for text in
+source code. ack skips VCS directories like `.git` or `.svn`, and understands
+file types so it doesn't look into giant `.mp4`s and other binaries by default.
+ack has spurred the development of other ack improvements (mostly in speed
+aspect) like The Silver Searcher (`ag`) or `ripgrep`. `git` also now includes a
 `git-grep` utility. ack has a website: <https://beyondgrep.com>. See also
 <https://betterthanack.com>.
 
-<pm:App::Greple> and <pm:App::abgrep> try to make searching for multiple
-patterns in grep easier. To search for all 'foo' and 'bar' in grep in no
-particular order, you either have to do something like:
+
+**2b. Improvements in specifying multiple patterns**
+
+Normally with the regular grep, to search for all 'foo' and 'bar', you either
+have to do something like:
 
     % grep --color=always foo FILES | grep bar
 
@@ -41,31 +50,49 @@ Note that searching for multiple patterns in particular order ('foo.*bar'), or
 searching for aternates from multiple patterns ('foo|bar') is no problem in
 grep.
 
-greple also has a few other tricks up its sleeve, like configuration file to
-define complex regexes, matching across lines, and Japanese text support.
+Some tools have been written to make it easier to specify multiple patterns.
+
+<prog:abgrep> from <pm:App::abgrep>.
+
+<prog:greple> from <pm:App::Greple>. greple also has a few other tricks up its
+sleeve, like configuration file to define complex regexes, matching across
+lines, and Japanese text support.
+
+<prog:grep-terms> from <pm:App::GrepUtils> all try to make searching for
+multiple patterns in grep easier.
+
+
+**3. Variants: alternate ways of specifying regex**
 
 Instead of specifying a pattern, with <pm:App::rpgrep> you can specify a pattern
 name in a <pm:Regexp::Pattern>::* module instead.
 
-**Reimplementations**
 
-grep for <pm:PerlPowerTools> simply tries to reimplement grep in Perl, as part
-of the project to reimplement many Unix utilities in Perl. It has few practical
-uses.
+**4a. Variants: alternate source: Perl source code**
 
-**Searching Perl source code**
+<prog:pmgrep> from <pm:App::pmgrep> lets you grep over locally installed Perl
+modules. It's basically a shortcut for something like this:
 
-<pm:App::pmgrep> lets you grep over locally installed Perl modules. It's
-basically a shortcut for something like this:
-
-    % pmlist -Rx | grep PAT
+    % pmlist -Rx | xargs grep PAT
     % grep PAT `pmlist -Rx`
 
-<pm:App::Grepl> uses <pm:PPI> to let you grep over Perl *documents*; it allows
-you to do things like: search only in Perl code comments or inside string
-literals.
+<prog:grepl> from <pm:App::Grepl> uses <pm:PPI> to let you grep over Perl
+*documents*; it allows you to do things like: search only in Perl code comments
+or inside string literals.
 
-**Searching URLs**
+
+**4b. Variants: other alternate sources**
+
+<prog:grep-from-iod> from <pm:App::IODUtils>.
+
+<prog:grep-from-ini> from <pm:App::INIUtils>.
+
+<prog:grep-from-coin> from <pm:App::CryptoCurrencyUtils>.
+
+<prog:grep-from-exchange> from <pm:App::CryptoCurrencyUtils>.
+
+
+**5a. Variants: searching URLs**
 
 <pm:App::grep::url> greps URLs from lines of input. You don't have to manually
 specify regex that matches URLs yourself; you can just add additional criteria
