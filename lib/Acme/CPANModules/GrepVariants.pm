@@ -18,14 +18,16 @@ uses.
 
 **2a. Improvements in recursive searching against files**
 
-**ack**. Created in 2005 by Andy Lester, <pm:ack> is the granddaddy of grep-like
-programs that try to improve the experience of using grep to search for text in
-source code. ack skips VCS directories like `.git` or `.svn`, and understands
-file types so it doesn't look into giant `.mp4`s and other binaries by default.
-ack has spurred the development of other ack improvements (mostly in speed
-aspect) like The Silver Searcher (`ag`) or `ripgrep`. `git` also now includes a
-`git-grep` utility. ack has a website: <https://beyondgrep.com>. See also
-<https://betterthanack.com>.
+<prog:ack>. Created in 2005 by Andy Lester, <pm:ack> is the granddaddy of
+grep-like programs that try to improve the experience of using grep to search
+for text in source code. ack skips VCS directories like `.git` or `.svn`, and
+understands file types so it doesn't look into giant `.mp4`s and other binaries
+by default. ack has spurred the development of other ack improvements (mostly in
+speed aspect) like The Silver Searcher (`ag`) or `ripgrep`. `git` also now
+includes a `git-grep` utility. ack has a website: <https://beyondgrep.com>. See
+also <https://betterthanack.com>.
+
+<prog:gre> from <pm:App::Gre>
 
 
 **2b. Improvements in specifying multiple patterns**
@@ -84,6 +86,8 @@ CPAN, use <https://metacpan.org>.
 *documents*; it allows you to do things like: search only in Perl code comments
 or inside string literals.
 
+<prog:podgrep> from <pm:pmtools> greps from POD sections of Perl source.
+
 
 **4b. Variants: alternate source: CSV**
 
@@ -111,6 +115,11 @@ rows of CSV.
 
 <prog:grep-from-exchange> from <pm:App::CryptoCurrencyUtils>.
 
+<prog:jgrep> from <pm:App::JsonLogUtils>
+
+<prog:ptargrep> from <pm:Archive::Tar> searches against table of contents of tar
+files.
+
 
 **5a. Variants: searching URLs**
 
@@ -118,6 +127,13 @@ rows of CSV.
 specify regex that matches URLs yourself; you can just add additional criteria
 for the URLs, e.g. whether the host part must contain some text, or whether a
 certain query parameter must match some pattern.
+
+
+**5b. Variants: searching dates**
+
+<prog:grep-date> from L<App::grep::date> greps for dates in lines of text.
+
+<prog:dategrep> from L<App::dategrep> prints lines matching a date range.
 
 _
 
