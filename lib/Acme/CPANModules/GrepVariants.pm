@@ -89,7 +89,13 @@ or inside string literals.
 rows of CSV.
 
 
-**4c. Variants: other alternate sources**
+**4c. Variants: alternate source: word lists**
+
+<prog:wordlist> from <pm:App::wordlist> greps words from wordlist modules
+(modules that contains word lists, see WordList).
+
+
+**4d. Variants: other alternate sources**
 
 <prog:grep-from-iod> from <pm:App::IODUtils>.
 
