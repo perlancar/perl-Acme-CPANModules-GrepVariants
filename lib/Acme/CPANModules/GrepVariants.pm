@@ -76,6 +76,10 @@ modules. It's basically a shortcut for something like this:
     % pmlist -Rx | xargs grep PAT
     % grep PAT `pmlist -Rx`
 
+<prog:cpangrep> from <pm:App::cpangrep> is a CLI for web service
+<https://cpan.grep.me>, which is no longer operating. To grep from files on
+CPAN, use <https://metacpan.org>.
+
 <prog:grepl> from <pm:App::Grepl> uses <pm:PPI> to let you grep over Perl
 *documents*; it allows you to do things like: search only in Perl code comments
 or inside string literals.
@@ -96,6 +100,8 @@ rows of CSV.
 
 
 **4d. Variants: other alternate sources**
+
+<prog:grep-from-bash-history> from <pm:App::BashHistoryUtils>.
 
 <prog:grep-from-iod> from <pm:App::IODUtils>.
 
