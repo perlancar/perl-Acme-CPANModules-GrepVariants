@@ -81,7 +81,15 @@ modules. It's basically a shortcut for something like this:
 or inside string literals.
 
 
-**4b. Variants: other alternate sources**
+**4b. Variants: alternate source: CSV**
+
+<prog:csvgrep> from <pm:csvgrep>
+
+<prog:csv-grep> from <pm:App::CSVUtils> allows you to apply Perl code against
+rows of CSV.
+
+
+**4c. Variants: other alternate sources**
 
 <prog:grep-from-iod> from <pm:App::IODUtils>.
 
