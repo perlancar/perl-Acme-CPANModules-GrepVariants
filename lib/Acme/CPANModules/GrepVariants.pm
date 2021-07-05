@@ -117,6 +117,9 @@ rows of CSV.
 
 <prog:jgrep> from <pm:App::JsonLogUtils>
 
+<prog:pdfgrep> (alias: <prog:grep-from-pdf>) from <pm:App::PDFUtils> searches
+against text in PDF files (it's a wrapper for `pdftotext` utility and grep).
+
 <prog:ptargrep> from <pm:Archive::Tar> searches against table of contents of tar
 files.
 
