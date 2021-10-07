@@ -11,7 +11,7 @@ use Acme::CPANModulesUtil::Misc;
 my $description = <<'_';
 **1. Reimplementations**
 
-grep for <pm:PerlPowerTools> simply tries to reimplement grep in Perl, as part
+grep from <pm:PerlPowerTools> simply tries to reimplement grep in Perl, as part
 of the project to reimplement many Unix utilities in Perl. It has few practical
 uses.
 
