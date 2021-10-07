@@ -1,19 +1,21 @@
 package Acme::CPANModules::GrepVariants;
 
+use strict;
+use Acme::CPANModulesUtil::Misc;
+
 # AUTHORITY
 # DATE
 # DIST
 # VERSION
-
-use strict;
-use Acme::CPANModulesUtil::Misc;
 
 my $description = <<'_';
 **1. Reimplementations**
 
 grep from <pm:PerlPowerTools> simply tries to reimplement grep in Perl, as part
 of the project to reimplement many Unix utilities in Perl. It has few practical
-uses.
+uses; mainly educational. The portability advantage of Perl is probably minor as
+grep and many Unix utilities are now available on other platforms including
+Windows.
 
 
 **2a. Improvements in recursive searching against files**
@@ -22,12 +24,17 @@ uses.
 grep-like programs that try to improve the experience of using grep to search
 for text in source code. ack skips VCS directories like `.git` or `.svn`, and
 understands file types so it doesn't look into giant `.mp4`s and other binaries
-by default. ack has spurred the development of other ack improvements (mostly in
-speed aspect) like The Silver Searcher (`ag`) or `ripgrep`. `git` also now
-includes a `git-grep` utility. ack has a website: <https://beyondgrep.com>. See
-also <https://betterthanack.com>.
+by default. ack has spurred the development of its improvements (mostly in speed
+aspect) like The Silver Searcher (`ag`) (implemented in C) or `ripgrep`
+(implemented in Rust). `git` also now includes a `git-grep` utility (implemented
+in C). ack has a website: <https://beyondgrep.com>. See also
+<https://betterthanack.com>.
 
-<prog:gre> from <pm:App::Gre>
+<prog:gre> from <pm:App::Gre> is a "grep clone using Perl regexp's with better
+file filtering, defaults, speed, and presentation". It seems to focus on
+providing many options to filter files (from including/excluding by file
+extension, by matching against filename, by first line, by maximum directory
+depth, and so on). It also offers some alternative output styles.
 
 
 **2b. Improvements in specifying multiple patterns**
@@ -70,7 +77,14 @@ Instead of specifying a pattern, with <pm:App::rpgrep> you can specify a pattern
 name in a <pm:Regexp::Pattern>::* module instead.
 
 
-**4a. Variants: alternate source: Perl source code**
+**4a. Variants: alternate source: repository (version control system) content and history**
+
+For git, the abovementioned `git-grep` can search for files in the work tree as
+well as commit content. For Mercurial, `hg grep` accomplishes the same.
+Alternatively you can dump the history then use the standard `grep` to go
+through it.
+
+**4b. Variants: alternate source: Perl source code**
 
 <prog:pmgrep> from <pm:App::pmgrep> lets you grep over locally installed Perl
 modules. It's basically a shortcut for something like this:
