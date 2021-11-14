@@ -11,11 +11,11 @@ use Acme::CPANModulesUtil::Misc;
 my $description = <<'_';
 **1. Reimplementations**
 
-grep from <pm:PerlPowerTools> simply tries to reimplement grep in Perl, as part
-of the project to reimplement many Unix utilities in Perl. It has few practical
-uses; mainly educational. The portability advantage of Perl is probably minor as
-grep and many Unix utilities are now available on other platforms including
-Windows.
+grep (from <pm:PerlPowerTools>) simply tries to reimplement grep in Perl, as
+part of the project to reimplement many Unix utilities in Perl. It has few
+practical uses; mainly educational. The portability advantage of Perl is
+probably minor as grep and many Unix utilities are now available on other
+platforms including Windows.
 
 
 **2a. Improvements in recursive searching against files**
@@ -30,7 +30,7 @@ aspect) like The Silver Searcher (`ag`) (implemented in C) or `ripgrep`
 in C). ack has a website: <https://beyondgrep.com>. See also
 <https://betterthanack.com>.
 
-<prog:gre> from <pm:App::Gre> is a "grep clone using Perl regexp's with better
+<prog:gre> (from <pm:App::Gre>) is a "grep clone using Perl regexp's with better
 file filtering, defaults, speed, and presentation". It seems to focus on
 providing many options to filter files (from including/excluding by file
 extension, by matching against filename, by first line, by maximum directory
@@ -53,28 +53,39 @@ look-ahead:
 
     % grep -P '(?=.*foo)(?=.*bar)' FILES
 
-but this does not capture (thus highlight) the patterns.
+but this does not capture (thus highlight) the patterns. To do that, you can
+pipe to grep once more:
+
+    % grep -P '(?=.*foo)(?=.*bar)' FILES | grep -P '(foo|bar)'
+
+but you introduce the complications of double filtering (e.g. filenames in
+FILES is now the subject of the second grep).
 
 Note that searching for multiple patterns in particular order ('foo.*bar'), or
 searching for aternates from multiple patterns ('foo|bar') is no problem in
 grep.
 
-Some tools have been written to make it easier to specify multiple patterns.
+Some tools have been written to make it easier to specify multiple patterns:
 
-<prog:abgrep> from <pm:App::abgrep>.
+<prog:abgrep> (from <pm:App::abgrep>) sports a `--all` option to require all
+patterns to appear in a line (in no particular order). Normally, when multiple
+patterns are given (via multiple `-e` or `--regexp` options), grep will include
+lines that just contain at least one of the patterns.
 
-<prog:greple> from <pm:App::Greple>. greple also has a few other tricks up its
-sleeve, like configuration file to define complex regexes, matching across
-lines, and Japanese text support.
+<prog:greple> (from <pm:App::Greple>). By default, greple only display lines
+that contain all patterns, instead of just one. greple also has a few other
+tricks up its sleeve, like configuration file to define complex regexes,
+matching across lines, and Japanese text support.
 
-<prog:grep-terms> from <pm:App::GrepUtils> all try to make searching for
-multiple patterns in grep easier.
+<prog:grep-terms> (from <pm:App::GrepUtils>) is a grep wrapper to convert
+multiple terms into a chain of look-ahead patterns like described above. This
+allows you to use the standard grep.
 
 
 **3. Variants: alternate ways of specifying regex**
 
-Instead of specifying a pattern, with <pm:App::rpgrep> you can specify a pattern
-name in a <pm:Regexp::Pattern>::* module instead.
+Instead of specifying a pattern, with C<prog:rpgrep> (from <pm:App::rpgrep>) you
+can specify a pattern name in a <pm:Regexp::Pattern>::* module instead.
 
 
 **4a. Variants: alternate source: repository (version control system) content and history**
@@ -86,71 +97,71 @@ through it.
 
 **4b. Variants: alternate source: Perl source code**
 
-<prog:pmgrep> from <pm:App::pmgrep> lets you grep over locally installed Perl
+<prog:pmgrep> (from <pm:App::pmgrep>) lets you grep over locally installed Perl
 modules. It's basically a shortcut for something like this:
 
     % pmlist -Rx | xargs grep PAT
-    % grep PAT `pmlist -Rx`
+    % grep PAT $(pmlist -Rx)
 
-<prog:cpangrep> from <pm:App::cpangrep> is a CLI for web service
+<prog:cpangrep> (from <pm:App::cpangrep>) is a CLI for web service
 <https://cpan.grep.me>, which is no longer operating. To grep from files on
 CPAN, use <https://metacpan.org>.
 
-<prog:grepl> from <pm:App::Grepl> uses <pm:PPI> to let you grep over Perl
+<prog:grepl> (from <pm:App::Grepl>) uses <pm:PPI> to let you grep over Perl
 *documents*; it allows you to do things like: search only in Perl code comments
 or inside string literals.
 
-<prog:podgrep> from <pm:pmtools> greps from POD sections of Perl source.
+<prog:podgrep> (from <pm:pmtools>) greps from POD sections of Perl source.
 
 
 **4b. Variants: alternate source: CSV**
 
-<prog:csvgrep> from <pm:csvgrep>
+<prog:csvgrep> (from <pm:csvgrep>)
 
-<prog:csv-grep> from <pm:App::CSVUtils> allows you to apply Perl code against
+<prog:csv-grep> (from <pm:App::CSVUtils>) allows you to apply Perl code against
 rows of CSV.
 
 
 **4c. Variants: alternate source: word lists**
 
-<prog:wordlist> from <pm:App::wordlist> greps words from wordlist modules
+<prog:wordlist> (from <pm:App::wordlist>) greps words from wordlist modules
 (modules that contains word lists, see WordList).
 
 
 **4d. Variants: other alternate sources**
 
-<prog:grep-from-bash-history> from <pm:App::BashHistoryUtils>.
+<prog:grep-from-bash-history> (from <pm:App::BashHistoryUtils>).
 
-<prog:grep-from-iod> from <pm:App::IODUtils>.
+<prog:grep-from-iod> (from <pm:App::IODUtils>).
 
-<prog:grep-from-ini> from <pm:App::INIUtils>.
+<prog:grep-from-ini> (from <pm:App::INIUtils>).
 
-<prog:grep-from-coin> from <pm:App::CryptoCurrencyUtils>.
+<prog:grep-from-coin> (from <pm:App::CryptoCurrencyUtils>).
 
-<prog:grep-from-exchange> from <pm:App::CryptoCurrencyUtils>.
+<prog:grep-from-exchange> (from <pm:App::CryptoCurrencyUtils>).
 
-<prog:jgrep> from <pm:App::JsonLogUtils>
+<prog:jgrep> (from <pm:App::JsonLogUtils>).
 
-<prog:pdfgrep> (alias: <prog:grep-from-pdf>) from <pm:App::PDFUtils> searches
+<prog:pdfgrep> (alias: <prog:grep-from-pdf>) (from <pm:App::PDFUtils>) searches
 against text in PDF files (it's a wrapper for `pdftotext` utility and grep).
 
-<prog:ptargrep> from <pm:Archive::Tar> searches against table of contents of tar
-files.
+<prog:ptargrep> (from <pm:Archive::Tar>) searches against table of contents of
+tar files.
 
 
 **5a. Variants: searching URLs**
 
-<pm:App::grep::url> greps URLs from lines of input. You don't have to manually
-specify regex that matches URLs yourself; you can just add additional criteria
-for the URLs, e.g. whether the host part must contain some text, or whether a
-certain query parameter must match some pattern.
+<prog:grep-url> (from <pm:App::grep::url>) greps URLs from lines of input. You
+don't have to manually specify regex that matches URLs yourself; you can just
+add additional criteria for the URLs, e.g. whether the host part must contain
+some text, or whether a certain query parameter must match some pattern.
 
 
 **5b. Variants: searching dates**
 
-<prog:grep-date> from L<App::grep::date> greps for dates in lines of text.
+<prog:grep-date> (from L<App::grep::date>) greps for dates in lines of text.
 
-<prog:dategrep> from L<App::dategrep> prints lines matching a date range.
+<prog:dategrep> (from L<App::dategrep>) prints lines matching a date range.
 
 _
 
