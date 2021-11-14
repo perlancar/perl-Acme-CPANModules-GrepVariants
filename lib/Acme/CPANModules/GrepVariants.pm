@@ -9,6 +9,8 @@ use Acme::CPANModulesUtil::Misc;
 # VERSION
 
 my $description = <<'_';
+This list catalogs various grep-like tools.
+
 **1. Reimplementations**
 
 grep (from <pm:PerlPowerTools>) simply tries to reimplement grep in Perl, as
