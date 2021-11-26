@@ -39,10 +39,10 @@ extension, by matching against filename, by first line, by maximum directory
 depth, and so on). It also offers some alternative output styles.
 
 
-**2b. Improvements in specifying multiple patterns**
+**2b. Improvements in searching for multiple patterns in no particular order**
 
-Normally with the regular grep, to search for all 'foo' and 'bar', you either
-have to do something like:
+Normally with the regular grep, to search for all 'foo' and 'bar' *in no
+particular order*, you either have to do something like:
 
     % grep --color=always foo FILES | grep bar
 
