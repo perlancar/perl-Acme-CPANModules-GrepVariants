@@ -86,7 +86,7 @@ allows you to use the standard grep.
 
 **3. Variants: alternate ways of specifying regex**
 
-Instead of specifying a pattern, with C<prog:rpgrep> (from <pm:App::rpgrep>) you
+Instead of specifying a pattern, with <prog:rpgrep> (from <pm:App::rpgrep>) you
 can specify a pattern name in a <pm:Regexp::Pattern>::* module instead.
 
 
