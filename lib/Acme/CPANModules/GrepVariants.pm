@@ -168,7 +168,7 @@ some text, or whether a certain query parameter must match some pattern.
 _
 
 our $LIST = {
-    summary => 'Grep-like CLI utilities available on CPAN',
+    summary => 'List of grep-like CLI utilities available on CPAN',
     description => $description,
     entries => [
     ],
