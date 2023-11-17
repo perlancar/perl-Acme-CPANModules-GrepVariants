@@ -89,6 +89,8 @@ allows you to use the standard grep.
 Instead of specifying a pattern, with <prog:rpgrep> (from <pm:App::rpgrep>) you
 can specify a pattern name in a <pm:Regexp::Pattern>::* module instead.
 
+With <prog:wcgrep> (from <pm:App::wcgrep>) you can search using wildcard pattern
+instead of regex, which is admittedly more limited than regex.
 
 **4a. Variants: alternate source: repository (version control system) content and history**
 
