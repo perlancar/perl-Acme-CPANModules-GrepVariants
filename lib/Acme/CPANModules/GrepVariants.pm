@@ -84,13 +84,18 @@ multiple terms into a chain of look-ahead patterns like described above. This
 allows you to use the standard grep.
 
 
-**3. Variants: alternate ways of specifying regex**
+**3. Variants: alternate ways of specifying things to search for**
 
-Instead of specifying a pattern, with <prog:rpgrep> (from <pm:App::rpgrep>) you
-can specify a pattern name in a <pm:Regexp::Pattern>::* module instead.
+Instead of specifying a regexp pattern directly, with <prog:rpgrep> (from
+<pm:App::rpgrep>) you can specify a pattern name in a <pm:Regexp::Pattern>::*
+module instead.
 
 With <prog:wcgrep> (from <pm:App::wcgrep>) you can search using wildcard pattern
 instead of regex, which is admittedly more limited than regex.
+
+<prog:grep-similar-text> (from <pm:App::grep::similar::text> lets you specify a
+text and it will only show lines from input that are similar to the provided
+text.
 
 
 **4a. Variants: alternate source: repository (version control system) content and history**
