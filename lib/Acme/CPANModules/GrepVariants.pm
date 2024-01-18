@@ -92,12 +92,14 @@ can specify a pattern name in a <pm:Regexp::Pattern>::* module instead.
 With <prog:wcgrep> (from <pm:App::wcgrep>) you can search using wildcard pattern
 instead of regex, which is admittedly more limited than regex.
 
+
 **4a. Variants: alternate source: repository (version control system) content and history**
 
 For git, the abovementioned `git-grep` can search for files in the work tree as
 well as commit content. For Mercurial, `hg grep` accomplishes the same.
 Alternatively you can dump the history then use the standard `grep` to go
 through it.
+
 
 **4b. Variants: alternate source: Perl source code**
 
@@ -118,7 +120,7 @@ or inside string literals.
 <prog:podgrep> (from <pm:pmtools>) greps from POD sections of Perl source.
 
 
-**4b. Variants: alternate source: CSV**
+**4c. Variants: alternate source: CSV**
 
 <prog:csvgrep> (from <pm:csvgrep>)
 
@@ -126,13 +128,13 @@ or inside string literals.
 rows of CSV.
 
 
-**4c. Variants: alternate source: word lists**
+**4d. Variants: alternate source: word lists**
 
 <prog:wordlist> (from <pm:App::wordlist>) greps words from wordlist modules
 (modules that contains word lists, see WordList).
 
 
-**4d. Variants: other alternate sources**
+**4e. Variants: other alternate sources**
 
 <prog:grep-from-bash-history> (from <pm:App::BashHistoryUtils>).
 
