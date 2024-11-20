@@ -93,10 +93,14 @@ module instead.
 With <prog:wcgrep> (from <pm:App::wcgrep>) you can search using wildcard pattern
 instead of regex, which is admittedly more limited than regex.
 
-<prog:grep-similar-text> (from <pm:App::grep::similar::text> lets you specify a
+<prog:grep-similar-to> (from <pm:App::grep::similar::text> lets you specify a
 text and it will only show lines from input that are similar to the provided
 text.
 
+<prog:grep-sounds-like> (from <pm:App::grep::sounds::like> lets you specify a
+word and it will only show lines from input that have words that sound like the
+provided word. You can choose from one of several phonetic algorithms like
+Metaphone (the default), Soundex, etc.
 
 **4a. Variants: alternate source: repository (version control system) content and history**
 
