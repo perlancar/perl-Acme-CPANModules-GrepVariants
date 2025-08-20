@@ -8,7 +8,7 @@ use Acme::CPANModulesUtil::Misc;
 # DIST
 # VERSION
 
-my $description = <<'_';
+my $description = <<'MARKDOWN';
 This list catalogs various grep-like tools.
 
 **1. Reimplementations**
@@ -145,7 +145,8 @@ rows of CSV.
 
 **4e. Variants: other alternate sources**
 
-<prog:grep-from-bash-history> (from <pm:App::BashHistoryUtils>).
+<prog:grep-bash-history-entries> (from <pm:App::BashHistoryUtils>), with
+<prog:grephist> as shorter alias.
 
 <prog:grep-from-iod> (from <pm:App::IODUtils>).
 
@@ -178,7 +179,7 @@ some text, or whether a certain query parameter must match some pattern.
 
 <prog:dategrep> (from L<App::dategrep>) prints lines matching a date range.
 
-_
+MARKDOWN
 
 our $LIST = {
     summary => 'List of grep-like CLI utilities available on CPAN',
